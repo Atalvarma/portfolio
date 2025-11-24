@@ -1,11 +1,15 @@
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { portfolioData } from "@/data/portfolio"
+import { themeConfig } from "@/data/theme"
 
 export function Contact() {
     return (
-        <section id="contact" className="py-20 bg-secondary/5">
-            <div className="container mx-auto px-6">
+        <section id="contact" className="py-20 relative overflow-hidden">
+            {/* Background Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-secondary/5 to-background pointer-events-none" />
+
+            <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -23,7 +27,7 @@ export function Contact() {
                         viewport={{ once: true }}
                         className="space-y-8"
                     >
-                        <div className="flex items-start gap-4">
+                        <div className={`flex items-start gap-4 p-6 rounded-2xl ${themeConfig.effects.glass} ${themeConfig.effects.glassHover}`}>
                             <div className="p-3 bg-primary/10 rounded-lg text-primary">
                                 <Mail className="w-6 h-6" />
                             </div>
@@ -35,7 +39,7 @@ export function Contact() {
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4">
+                        <div className={`flex items-start gap-4 p-6 rounded-2xl ${themeConfig.effects.glass} ${themeConfig.effects.glassHover}`}>
                             <div className="p-3 bg-primary/10 rounded-lg text-primary">
                                 <Phone className="w-6 h-6" />
                             </div>
@@ -47,7 +51,7 @@ export function Contact() {
                             </div>
                         </div>
 
-                        <div className="flex items-start gap-4">
+                        <div className={`flex items-start gap-4 p-6 rounded-2xl ${themeConfig.effects.glass} ${themeConfig.effects.glassHover}`}>
                             <div className="p-3 bg-primary/10 rounded-lg text-primary">
                                 <MapPin className="w-6 h-6" />
                             </div>
@@ -62,7 +66,7 @@ export function Contact() {
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
-                        className="space-y-4"
+                        className={`space-y-4 p-8 rounded-3xl ${themeConfig.effects.glass}`}
                         onSubmit={(e) => e.preventDefault()}
                     >
                         <div className="grid grid-cols-2 gap-4">
@@ -71,7 +75,7 @@ export function Contact() {
                                 <input
                                     id="name"
                                     type="text"
-                                    className="w-full px-4 py-2 rounded-md border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                    className="w-full px-4 py-2 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all placeholder:text-muted-foreground/50"
                                     placeholder="John Doe"
                                 />
                             </div>
@@ -80,7 +84,7 @@ export function Contact() {
                                 <input
                                     id="email"
                                     type="email"
-                                    className="w-full px-4 py-2 rounded-md border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                    className="w-full px-4 py-2 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all placeholder:text-muted-foreground/50"
                                     placeholder="john@example.com"
                                 />
                             </div>
@@ -90,13 +94,13 @@ export function Contact() {
                             <textarea
                                 id="message"
                                 rows={4}
-                                className="w-full px-4 py-2 rounded-md border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+                                className="w-full px-4 py-2 rounded-lg border border-white/10 bg-white/5 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-none transition-all resize-none placeholder:text-muted-foreground/50"
                                 placeholder="Your message..."
                             />
                         </div>
                         <button
                             type="submit"
-                            className="w-full py-3 bg-primary text-primary-foreground rounded-md font-medium hover:opacity-90 transition-opacity flex items-center justify-center gap-2"
+                            className={`w-full py-3 rounded-lg font-medium text-white shadow-lg hover:shadow-primary/25 hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-2 bg-gradient-to-r ${themeConfig.effects.gradientSecondary}`}
                         >
                             <Send className="w-4 h-4" />
                             Send Message

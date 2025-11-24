@@ -1,48 +1,60 @@
 export const portfolioData = {
     personal: {
-        name: "Chandrika Sai Pentyala",
-        initials: "CSP",
-        role: "Cloud Engineer",
-        location: "Chicago, IL",
-        email: "chandrikasai.p@gmail.com",
-        phone: "(773) 842-8046",
-        phoneRaw: "+17738428046",
-        summary: "Cloud Engineer specializing in AWS, DevOps, and Secure Architecture.",
+        name: "Atal Mudunuru",
+        initials: "AM",
+        role: "Full Stack & Cloud Engineer",
+        location: "Dallas, TX",
+        email: "atalbm11@gmail.com",
+        phone: "(602) 815-2992",
+        phoneRaw: "+16028152992",
+        summary: "Full Stack and Cloud Engineer with 3+ years of designing and scaling AWS-based distributed systems using Java, Spring Boot, and React.",
         about: [
-            "I am a Cloud Engineer with hands-on experience in AWS, DevOps automation, containerized workloads, and cloud security practices. I specialize in building CI/CD pipelines, managing Infrastructure as Code (Terraform), and orchestrating Kubernetes clusters.",
-            "My background includes strong expertise in IAM hardening, cost-efficient architecture design, and leveraging LLM-based automation to enhance productivity. I am passionate about improving operational reliability and streamlining deployments through collaboration with development and operations teams."
+            "Full Stack and Cloud Engineer with 3+ years of designing and scaling AWS-based distributed systems using Java, Spring Boot, and React. Proven track record building EKS microservices across 200+ pods achieving 99.9% uptime, 35% throughput gains, and 30% infrastructure efficiency improvements.",
+            "Expert in CI/CD pipelines, event-driven architectures, and observability tooling that reduced incident resolution time by 40%. Passionate about building scalable, reliable, and efficient cloud-native applications."
         ]
     },
     skills: {
-        "Cloud Platforms": ["AWS", "Azure", "GCP", "EC2", "S3", "Lambda", "IAM", "VPC", "RDS"],
-        "DevOps & Automation": ["Terraform", "Ansible", "GitLab CI/CD", "Jenkins", "Docker", "Kubernetes", "Helm"],
-        "Security": ["IAM Hardening", "KMS", "SIEM (Splunk, ELK)", "CloudWatch"],
-        "AI & Automation": ["Prompt Engineering", "LLM Integrations", "Python Automation"],
-        "Languages & Tools": ["Python", "SQL", "Git", "Linux", "JIRA", "Bash"],
+        "Cloud Platforms": ["AWS", "EC2", "EKS", "Lambda", "API Gateway", "DynamoDB", "S3", "CloudWatch", "CloudFormation"],
+        "DevOps & IaC": ["Docker", "Kubernetes", "Terraform", "Jenkins", "CI/CD", "Prometheus", "ELK Stack"],
+        "Languages": ["Java", "JavaScript", "Python", "TypeScript", "SQL"],
+        "Frameworks": ["Spring Boot", "Spring Cloud", "React", "Hibernate"],
+        "Databases & Messaging": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "SQS", "SNS"],
     },
     experience: [
         {
-            role: "Cloud Engineer",
-            company: "Wipro Technologies",
-            period: "Feb 2021 – Jul 2023",
+            role: "Software Engineer",
+            company: "Western Union",
+            period: "Oct 2023 – Present",
             description: [
-                "Built and optimized AWS cloud environments using EC2, S3, IAM, VPC, RDS, and Autoscaling.",
-                "Developed CI/CD pipelines using GitLab CI/CD and Jenkins, reducing release times by 50%.",
-                "Implemented Infrastructure as Code using Terraform and Ansible for scalable provisioning.",
-                "Managed Kubernetes/EKS clusters and Docker workloads for microservices deployment.",
-                "Hardened cloud security through IAM policy refinement and SIEM integration.",
+                "Designed and deployed AWS EKS microservices using Docker, Java 17 and Spring Boot, improving platform throughput by 35% and uptime to 99.9% for financial transaction systems.",
+                "Automated CI/CD pipelines using Terraform and Jenkins, reducing deployment time by 60% and enabling daily production releases.",
+                "Expanded observability coverage across 20+ microservices and 200+ EKS pods using CloudWatch, Prometheus, and ELK Stack, improving visibility and cutting mean time to recovery (MTTR) by 40%.",
+                "Increased infrastructure efficiency by 30% through instance right-sizing, Spot Instance adoption, and scaling policy optimizations, reducing unused compute capacity by 22% while maintaining 99.9% services.",
             ],
         },
         {
-            role: "Graduate Assistant, IT",
-            company: "Governors State University",
-            period: "Aug 2024 – Dec 2024",
+            role: "Associate Software Developer",
+            company: "Future Generali Life Insurance",
+            period: "Jun 2020 – Jul 2021",
             description: [
-                "Supported students with IT coursework involving Linux basics and cloud labs.",
-                "Assisted faculty in preparing lab materials and grading technical assignments.",
-                "Provided technical troubleshooting for student laptops and virtual environments.",
-                "Used AI tools for drafting summaries and streamlining administrative tasks.",
+                "Developed and maintained RESTful APIs using Java 8 and Spring Boot to power internal analytics and policy management systems used by 10k+ employees and agents nationwide.",
+                "Optimized PostgreSQL queries and implemented Redis caching, improving API response times by 20% and enabling faster access to customer policy data.",
+                "Integrated backend services with React-based dashboards, increasing front-end data reliability and cutting client-side load times by 25%.",
             ],
         },
+    ],
+    education: [
+        {
+            degree: "Master of Information Technology",
+            school: "Arizona State University",
+            period: "2021 – May 2023",
+            location: "Tempe, AZ"
+        },
+        {
+            degree: "Bachelor of Technology in Computer Science",
+            school: "GITAM University",
+            period: "2016 – Jun 2020",
+            location: "Visakhapatnam, India"
+        }
     ]
 }

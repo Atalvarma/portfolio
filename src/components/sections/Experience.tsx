@@ -1,11 +1,12 @@
 import { motion } from "framer-motion"
 import { Briefcase, Calendar } from "lucide-react"
 import { portfolioData } from "@/data/portfolio"
+import { themeConfig } from "@/data/theme"
 
 export function Experience() {
     return (
-        <section id="experience" className="py-20 bg-background">
-            <div className="container mx-auto px-6">
+        <section id="experience" className="py-20 bg-background relative overflow-hidden">
+            <div className="container mx-auto px-6 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -24,20 +25,20 @@ export function Experience() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.2 }}
-                            className="relative pl-8 border-l-2 border-muted md:pl-0 md:border-l-0 md:grid md:grid-cols-5 md:gap-8"
+                            className="relative pl-8 border-l-2 border-white/10 md:pl-0 md:border-l-0 md:grid md:grid-cols-5 md:gap-8 group"
                         >
                             {/* Timeline line for desktop */}
-                            <div className="hidden md:block absolute left-[20%] top-0 bottom-0 w-px bg-muted -ml-px" />
-                            <div className="hidden md:flex absolute left-[20%] top-0 w-3 h-3 bg-primary rounded-full -ml-1.5 mt-1.5 ring-4 ring-background" />
+                            <div className="hidden md:block absolute left-[20%] top-0 bottom-0 w-px bg-white/10 -ml-px group-hover:bg-primary/50 transition-colors" />
+                            <div className="hidden md:flex absolute left-[20%] top-0 w-3 h-3 bg-primary rounded-full -ml-1.5 mt-1.5 ring-4 ring-background shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
 
                             <div className="md:col-span-1 md:text-right md:pr-8">
                                 <div className="flex items-center md:justify-end gap-2 text-sm text-muted-foreground mb-2 md:mb-0">
-                                    <Calendar className="w-4 h-4" />
+                                    <Calendar className="w-4 h-4 text-primary" />
                                     <span>{job.period}</span>
                                 </div>
                             </div>
 
-                            <div className="md:col-span-4 relative pl-8 md:pl-8 border-l-2 border-muted md:border-l-0">
+                            <div className={`md:col-span-4 relative pl-8 md:pl-8 border-l-2 border-white/10 md:border-l-0 p-6 rounded-2xl transition-all duration-300 ${themeConfig.effects.glass} ${themeConfig.effects.glassHover}`}>
                                 {/* Mobile dot */}
                                 <div className="md:hidden absolute left-0 top-1.5 w-3 h-3 bg-primary rounded-full -ml-[7px] ring-4 ring-background" />
 

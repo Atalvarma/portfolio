@@ -3,6 +3,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { portfolioData } from "@/data/portfolio"
+import { themeConfig } from "@/data/theme"
 
 const navItems = [
     { name: "About", href: "#about" },
@@ -27,11 +28,11 @@ export function Navbar() {
             transition={{ duration: 0.5 }}
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                isScrolled ? "bg-background/80 backdrop-blur-md border-b shadow-sm" : "bg-transparent"
+                isScrolled ? "bg-background/70 backdrop-blur-xl border-b border-white/10 shadow-lg" : "bg-transparent"
             )}
         >
             <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-                <a href="#" className="text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600">
+                <a href="#" className={`text-2xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r ${themeConfig.effects.gradientPrimary} pr-1`}>
                     {portfolioData.personal.initials}
                 </a>
 
@@ -44,7 +45,7 @@ export function Navbar() {
                             className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors relative group"
                         >
                             {item.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
+                            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r ${themeConfig.effects.gradientSecondary} transition-all group-hover:w-full`} />
                         </a>
                     ))}
                 </div>
@@ -65,7 +66,7 @@ export function Navbar() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-b p-4 flex flex-col space-y-4 shadow-lg"
+                    className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-white/10 p-4 flex flex-col space-y-4 shadow-2xl"
                 >
                     {navItems.map((item) => (
                         <a

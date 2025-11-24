@@ -1,35 +1,39 @@
 import { motion } from "framer-motion"
 import { ArrowDown } from "lucide-react"
 import { portfolioData } from "@/data/portfolio"
+import { themeConfig } from "@/data/theme"
 
 export function Hero() {
     return (
-        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-b from-background to-secondary/20 pt-20">
-            {/* Background Elements */}
+        <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background pt-20">
+            {/* Gradient Background Mesh */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background opacity-50" />
+
                 <motion.div
                     animate={{
-                        y: [0, -20, 0],
-                        rotate: [0, 5, 0],
+                        scale: [1, 1.2, 1],
+                        opacity: [0.3, 0.5, 0.3],
                     }}
                     transition={{
-                        duration: 5,
+                        duration: 8,
                         repeat: Infinity,
                         ease: "easeInOut",
                     }}
-                    className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"
+                    className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/30 rounded-full blur-[100px]"
                 />
                 <motion.div
                     animate={{
-                        y: [0, 20, 0],
-                        rotate: [0, -5, 0],
+                        scale: [1, 1.1, 1],
+                        opacity: [0.3, 0.5, 0.3],
                     }}
                     transition={{
-                        duration: 7,
+                        duration: 10,
                         repeat: Infinity,
                         ease: "easeInOut",
+                        delay: 1,
                     }}
-                    className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+                    className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#FF4500]/20 rounded-full blur-[120px]"
                 />
             </div>
 
@@ -39,10 +43,13 @@ export function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h2 className="text-sm md:text-base font-medium text-primary mb-4 tracking-widest uppercase">
-                        Hello, I'm
-                    </h2>
-                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70">
+                    <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-[#FF4500]/20 bg-[#FF4500]/10 backdrop-blur-sm">
+                        <h2 className="text-sm md:text-base font-medium text-[#FF4500] tracking-widest uppercase">
+                            Hello, I'm
+                        </h2>
+                    </div>
+
+                    <h1 className={`text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r ${themeConfig.effects.gradientPrimary}`}>
                         {portfolioData.personal.name}
                     </h1>
                     <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
@@ -57,13 +64,13 @@ export function Hero() {
                     >
                         <a
                             href="#contact"
-                            className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-medium hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl"
+                            className={`px-8 py-3 rounded-full font-medium text-white shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300 bg-gradient-to-r ${themeConfig.effects.gradientSecondary}`}
                         >
                             Get in Touch
                         </a>
                         <a
                             href="#experience"
-                            className="px-8 py-3 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full font-medium transition-colors"
+                            className={`px-8 py-3 rounded-full font-medium transition-all duration-300 ${themeConfig.effects.glass} ${themeConfig.effects.glassHover}`}
                         >
                             View Work
                         </a>
